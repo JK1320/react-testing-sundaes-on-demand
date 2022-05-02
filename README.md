@@ -1,5 +1,11 @@
 # Getting Started with Create React App
 
+    - used and worked  -  following to create app: 
+    npx create-react-app@latest react-testing-sundaes-on-demand
+
+    - did not work:
+    npx create-react-app react-testing-sundaes-on-demand
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
