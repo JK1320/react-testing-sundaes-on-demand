@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+-- Udemy Tutorial: Testing React with Jest and Testing Library --
+
     - used and worked  -  following to create app: 
     npx create-react-app@latest react-testing-sundaes-on-demand
 
