@@ -8,6 +8,8 @@
     - did not work:
     npx create-react-app react-testing-sundaes-on-demand
 
+1.  npm install eslint-plugin-testing-library eslint-plugin-jest-dom
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
