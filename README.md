@@ -10,7 +10,7 @@
 
 1.  npm install eslint-plugin-testing-library eslint-plugin-jest-dom
 
-
+2. npm install react-bootstrap bootstrap
 ---------------------------------------------------------------------
 => I had the following error after running npm test:
 
