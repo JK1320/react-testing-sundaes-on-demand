@@ -10,6 +10,33 @@
 
 1.  npm install eslint-plugin-testing-library eslint-plugin-jest-dom
 
+
+---------------------------------------------------------------------
+=> I had the following error after running npm test:
+
+Error: Failed to initialize watch plugin "node_modules/jest-watch-typeahead/filename.js":
+
+  ● Test suite failed to run
+
+    file:///Users/jas/Documents/GitHub/react-testing-sundaes-on-demand/node_modules/jest-watch-typeahead/build/file_name_plugin/prompt.js:4
+    import { PatternPrompt, printPatternCaret, printRestoredPatternCaret } from 'jest-watcher';
+                            ^^^^^^^^^^^^^^^^^
+    SyntaxError: Named export 'printPatternCaret' not found. The requested module 'jest-watcher' is a CommonJS module, which may not support all module.exports as named exports.
+    CommonJS modules can always be imported via the default export, for example using:
+
+    import pkg from 'jest-watcher';
+    const { PatternPrompt, printPatternCaret, printRestoredPatternCaret } = pkg;
+
+      at async requireOrImportModule (node_modules/jest-util/build/requireOrImportModule.js:65:32)
+      at async watch (node_modules/@jest/core/build/watch.js:337:34)
+      at async _run10000 (node_modules/@jest/core/build/cli/index.js:311:7)
+      at async runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
+
+
+=> I run following to resolve it:
+npm i -D --exact jest-watch-typeahead@0.6.5
+---------------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
