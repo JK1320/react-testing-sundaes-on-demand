@@ -16,7 +16,7 @@ const SummaryForm = () => {
     return (
         <Form>
             <Form.Group controlId="terms-and-conditions">
-                <Form.check 
+                <Form.Check 
                 type="checkbox"
                 checked={toChecked}
                 onChange={(e) => setToChecked(e.target.checked)}
