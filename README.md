@@ -11,6 +11,11 @@
 1.  npm install eslint-plugin-testing-library eslint-plugin-jest-dom
 
 2. npm install react-bootstrap bootstrap
+
+3. npm install @testing-library/user-event @testing-library/dom
+
+4. Query Methods: screen object has query method
+          - command[All]ByQueryType
 ---------------------------------------------------------------------
 => I had the following error after running npm test:
 
