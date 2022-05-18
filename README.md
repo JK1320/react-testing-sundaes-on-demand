@@ -16,6 +16,13 @@
 
 4. Query Methods: screen object has query method
           - command[All]ByQueryType
+          command: get: expect element to be in DOM
+                   query: expect element not to be in DOM
+                   find: expect element to appear async
+          All: (exclude) expect only one match
+               (include) expect more than one match - array
+          query type: what you searching by: 
+                      role, alt text, text, placeholder, label text etc
 ---------------------------------------------------------------------
 => I had the following error after running npm test:
 
