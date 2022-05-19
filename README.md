@@ -23,6 +23,8 @@
                (include) expect more than one match - array
           query type: what you searching by: 
                       role, alt text, text, placeholder, label text etc
+
+5. npm install msw        (Mock Service Worker)
 ---------------------------------------------------------------------
 => I had the following error after running npm test:
 
