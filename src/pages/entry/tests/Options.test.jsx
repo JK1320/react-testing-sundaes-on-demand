@@ -2,11 +2,12 @@ import { render, screen } from "@testing-library/react"
 import Options from '../Options';
 
 
-test('displays image for each scoop option from server', () => {
+// when something to appear asynchronously on the page, must use await & findBy
+test('displays image for each scoop option from server', async () => {
     render(<Options optionType="scoops" />);
 
     // find images  $ => means at the end of string, image src = name
-    const scoopImages = screen.getAllByRole('img', {name: '/scoop$/i'});
+    const scoopImages = await screen.findAllByRole('img', {name: /scoop$/i});
     expect(scoopImages).toHaveLength(2);
     
     // confirm alt text of images
