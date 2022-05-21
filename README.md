@@ -25,6 +25,8 @@
                       role, alt text, text, placeholder, label text etc
 
 5. npm install msw        (Mock Service Worker)
+
+6. npm install axios   => to retrieve data from server  
 ---------------------------------------------------------------------
 => I had the following error after running npm test:
 
