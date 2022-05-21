@@ -5,7 +5,7 @@ import Options from '../Options';
 test('displays image for each scoop option from server', () => {
     render(<Options optionType="scoops" />);
 
-    // find images  $ => means at the end of string
+    // find images  $ => means at the end of string, image src = name
     const scoopImages = screen.getAllByRole('img', {name: '/scoop$/i'});
     expect(scoopImages).toHaveLength(2);
     
