@@ -53,6 +53,28 @@ Error: Failed to initialize watch plugin "node_modules/jest-watch-typeahead/file
 => I run following to resolve it:
 npm i -D --exact jest-watch-typeahead@0.6.5
 ---------------------------------------------------------------------
+=> I had the following error after running npm test:
+
+Unable to find role="img"
+
+=> I had no return statement and did following to resolve it:
+
+add an explicit return statement to the functional component: 
+
+export default function ScoopOption({ name, imagePath }) {
+  return (
+    <Col xs={12} sm={6} md={4} lg={3} style={{ textAlign: "center" }}>
+      <img
+        style={{ width: "75%" }}
+        src={`http://localhost:3030/${imagePath}`}
+        alt={`${name} scoop`}
+      />
+    </Col>
+  );
+}
+
+
+--------------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
