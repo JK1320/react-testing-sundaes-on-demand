@@ -12,7 +12,7 @@ const SummaryForm = () => {
 
      const popover = (
        <Popover id="popover-basic">
-         <Popover.Body>
+         <Popover.Body style={{ backgroundColor: "#f05555", color: "white", fontSize: '1.2rem' }}>
            No ice cream will actually be delivered
          </Popover.Body>
        </Popover>
