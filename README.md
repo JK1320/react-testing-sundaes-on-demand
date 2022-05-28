@@ -27,7 +27,9 @@
 5. npm install msw        (Mock Service Worker)
 
 6. npm install axios   => to retrieve data from server  
+
 ---------------------------------------------------------------------
+
 => I had the following error after running npm test:
 
 Error: Failed to initialize watch plugin "node_modules/jest-watch-typeahead/filename.js":
@@ -48,11 +50,11 @@ Error: Failed to initialize watch plugin "node_modules/jest-watch-typeahead/file
       at async _run10000 (node_modules/@jest/core/build/cli/index.js:311:7)
       at async runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-
-
 => I run following to resolve it:
 npm i -D --exact jest-watch-typeahead@0.6.5
+
 ---------------------------------------------------------------------
+
 => I had the following error after running npm test:
 
 Unable to find role="img"
@@ -75,6 +77,7 @@ export default function ScoopOption({ name, imagePath }) {
 
 
 --------------------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
