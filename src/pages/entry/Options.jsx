@@ -6,6 +6,7 @@ import ScoopOption from './ScoopOption';
 import ToppingOption from "./ToppingOption";
 import {pricePerItem} from "../../constants";
 import {useOrderDetails} from "../../contexts/OrderDetails";
+import { formatCurrency } from "../../utilities";
 
 
 export default function Options({ optionType }) {
@@ -42,7 +43,7 @@ const optionItems = items.map((item) => (
 return (
   <>
     <h2>{title}</h2>
-    <p>{pricePerItem[optionType]} each</p>
+    <p>{formatCurrency(pricePerItem[optionType])} each</p>
     <p>{title} total: {orderDetails.totals[optionType]}</p>
     <Row>{optionItems}</Row>
   </>
