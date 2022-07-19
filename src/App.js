@@ -1,9 +1,10 @@
 import {useState} from "react";
 import Container from "react-bootstrap/Container";
-import { OrderDetailsProvider } from "./contexts/OrderDetails";
 import OrderEntry from "./pages/entry/OrderEntry";
 import OrderConfirmation from "./pages/confirmation/OrderConfirmation";
 import OrderSummary from "./pages/summary/OrderSummary";
+import { OrderDetailsProvider } from "./contexts/OrderDetails";
+
 
 function App() {
   // orderPhase needs to be "inProgress", "review" or "completed"

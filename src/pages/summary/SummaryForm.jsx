@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './SummaryForm.css';
+//import './SummaryForm.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Popover from 'react-bootstrap/Popover';
@@ -33,9 +33,7 @@ setOrderPhase("completed");
           <span style={{ color: "blue" }}>Terms and conditions</span>
         </OverlayTrigger>
       </span>
-    );
-
-   
+    )
 
     return (
         <Form onSubmit={handleSubmit}>

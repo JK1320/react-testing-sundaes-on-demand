@@ -3,45 +3,44 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import { useOrderDetails } from "../../contexts/OrderDetails";
 
-export default function OrderConfirmation ({setOrderPhase}) {
-    const [, , resetOrder] = useOrderDetails();
-    const [orderNumber, setOrderNumber] = useState(null);
+export default function OrderConfirmation({ setOrderPhase }) {
+  const [, , resetOrder] = useOrderDetails();
+  const [orderNumber, setOrderNumber] = useState(null);
 
-    useEffect(() => {
-     axios
-     // in a real app we would get order details from context
-     // & send with post
-     .post(`http://localhost:3030/order`)
-     .then((response)=> {
+  useEffect(() => {
+    axios
+      // in a real app we would get order details from context
+      // & send with post
+      .post(`http://localhost:3030/order`)
+      .then((response) => {
         setOrderNumber(response.data.orderNumber);
-     })
-     .catch((error) => {
+      })
+      .catch((error) => {
         console.log(error);
-         // todo: handle error
-     })
-    }, []);
+        // todo: handle error
+      });
+  }, []);
 
+  function handleClick() {
+    // clear the order details
+    resetOrder();
 
-    function handleClick () {
-// clear the order details
-resetOrder();
+    //send back to order page
+    setOrderPhase("inProgress");
+  }
 
-//send back to order page
-setOrderPhase("inProgress");
-    };
-
-    if(orderNumber){
-       return (
-        <div style={{textAlign: "centre"}}>
-            <h1>Thank You!</h1>
-            <p>Your order number is {orderNumber}</p>
-            <p style={{fontSize: "25%"}}>
-                as per our terms and conditions, nothing will happen now
-            </p>
-            <Button onClick={handleClick}>Create new order</Button>
-        </div>
-       ); 
-    } else {
-        return <div>Loading</div>
-    }
+  if (orderNumber) {
+    return (
+      <div style={{ textAlign: "centre" }}>
+        <h1>Thank You!</h1>
+        <p>Your order number is {orderNumber}</p>
+        <p style={{ fontSize: "25%" }}>
+          as per our terms and conditions, nothing will happen now
+        </p>
+        <Button onClick={handleClick}>Create new order</Button>
+      </div>
+    );
+  } else {
+    return <div>Loading</div>;
+  }
 }
