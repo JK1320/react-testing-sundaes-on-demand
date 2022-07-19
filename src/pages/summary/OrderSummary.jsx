@@ -5,7 +5,7 @@ import { useOrderDetails } from "../../contexts/OrderDetails";
 
 
 export default function OrderSummary({setOrderPhase}) {
-const {orderDetails} = useOrderDetails();
+const[orderDetails] = useOrderDetails(); 
 
 const scoopArray = Array.from(orderDetails.scoops.entries());
 const scoopList = scoopArray.map(([key, value]) => (
