@@ -2,7 +2,7 @@ import Options from "./Options";
 import Button from "react-bootstrap/Button";
 import {useOrderDetails} from "../../contexts/OrderDetails";
 
-export default function OrderEntry(setOrderPhase) {
+export default function OrderEntry({setOrderPhase}) {
   const [orderDetails] = useOrderDetails();
     return (
       <div>
