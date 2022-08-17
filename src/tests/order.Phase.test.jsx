@@ -54,11 +54,19 @@ test("order phases for happy path", async () => {
     const confirmOrderButton = screen.getByRole("button", {name: /confirm order/i,});
     userEvent.click(confirmOrderButton);
 
+    // expect "loading" to show
+const loading = screen.getByText(/loading/i);
+expect(loading).toBeInDocument();
+
     // confirmation order number on confirmation page
     // this one is async as there is a post request to server before it shows us the text (in between) 
     // & confirmation pages
     const thankYouHeader = await screen.findByRole("heading", {name: /thank you/i,});
     expect(thankYouHeader).toBeInTheDocument();
+
+    // expect that "loading" has disappeared
+    const notLoading = screen.queryByText('loading');
+    expect(notLoading).not.toBeInTheDocument();
 
     const orderNumber = await screen.findByText(/order number/i);
     expect(orderNumber).toBeInTheDocument();
@@ -80,3 +88,33 @@ test("order phases for happy path", async () => {
     await screen.findByRole("spinbutton", {name: "Vanilla"});
     await screen.findByRole("checkbox", { name: "Cherries" });
 });
+
+test('Toppings header is not on summary page if no toppings ordered', async () {
+// render App
+  render(<App />);
+
+  // Add ice creams scoops and toppings
+  const vanillaInput = await screen.findByRole("spinbutton", {name: "Vanilla"});
+    userEvent.clear(vanillaInput);
+    userEvent.type(vanillaInput, "1");
+
+     const chocolateInput = screen.getByRole("spinbutton", {name: "Chocolate"});
+    userEvent.clear(chocolateInput);
+    userEvent.type(chocolateInput, "2");
+
+    // find and click order summary button
+const orderSummaryButton = screen.getByRole("button", {name: /order sundae/i,});
+    userEvent.click(orderSummaryButton);
+
+    const scoopsHeading = screen.getByRole("heading", {
+       name: "Scoops: $6.00",
+     });
+     expect(scoopsHeading).toBeInTheDocument();
+
+    const toppingsHeading = screen.queryByRole("heading", {
+        name: /toppings/i,
+      });
+      expect(toppingsHeading).not.toBeInTheDocument();
+
+
+})
