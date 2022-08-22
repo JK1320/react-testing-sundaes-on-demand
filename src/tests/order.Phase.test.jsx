@@ -115,6 +115,4 @@ const orderSummaryButton = screen.getByRole("button", {name: /order sundae/i,});
         name: /toppings/i,
       });
       expect(toppingsHeading).not.toBeInTheDocument();
-
-
-})
+});
