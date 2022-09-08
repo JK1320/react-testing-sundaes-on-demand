@@ -16,7 +16,7 @@ test("order phases for happy path", async () => {
     userEvent.clear(chocolateInput);
     userEvent.type(chocolateInput, "2");
 
-    const cherriesCheckbox = await screen.findByRole("checkbox", {name: cherries});
+    const cherriesCheckbox = await screen.findByRole("checkbox", {name: "Cherries"});
     userEvent.click(cherriesCheckbox);
 
     // find and click order summary button on oder entry page
@@ -56,7 +56,7 @@ test("order phases for happy path", async () => {
 
     // expect "loading" to show
 const loading = screen.getByText(/loading/i);
-expect(loading).toBeInDocument();
+expect(loading).toBeInTheDocument();
 
     // confirmation order number on confirmation page
     // this one is async as there is a post request to server before it shows us the text (in between) 
@@ -89,7 +89,7 @@ expect(loading).toBeInDocument();
     await screen.findByRole("checkbox", { name: "Cherries" });
 });
 
-test('Toppings header is not on summary page if no toppings ordered', async () {
+test('Toppings header is not on summary page if no toppings ordered', async () => {
 // render App
   render(<App />);
 
