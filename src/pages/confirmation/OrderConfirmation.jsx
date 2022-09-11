@@ -2,10 +2,12 @@ import {useState, useEffect} from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
 import { useOrderDetails } from "../../contexts/OrderDetails";
+import AlertBanner from "../common/AlertBanner";
 
 export default function OrderConfirmation({ setOrderPhase }) {
   const [, , resetOrder] = useOrderDetails();
   const [orderNumber, setOrderNumber] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     axios
@@ -15,11 +17,12 @@ export default function OrderConfirmation({ setOrderPhase }) {
       .then((response) => {
         setOrderNumber(response.data.orderNumber);
       })
-      .catch((error) => {
-        console.log(error);
-        // todo: handle error
-      });
+      .catch((error) => setError(true));
   }, []);
+
+  if(error){
+    return <AlertBanner message={null} variant={null} />;
+  }
 
   function handleClick() {
     // clear the order details
